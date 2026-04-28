@@ -13,9 +13,7 @@ for asks
 {
   "chat_name": "string",
   "asks": [
-    {
-      "description": "Ask description"
-    }
+    "Ask description"
   ]
 }
 ```
