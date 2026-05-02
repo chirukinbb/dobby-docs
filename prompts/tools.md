@@ -86,3 +86,17 @@ data class ScriptExecutionResult(
     )
     ```
     - **Возвращает**: Boolean – true if the task was successfully queued, false otherwise.
+
+### File System Rules (Android-specific):
+1. **Chain Commands:** Prefer chaining related shell operations using `&&` (e.g., `mkdir -p path && mv source target`). This ensures atomicity.
+2. **Path Absolute Integrity:** ALWAYS use absolute paths (starting with `/sdcard/`). Never use relative paths like `Archive/` or `./`.
+3. **Shell vs Python:**
+   - Use `executeShellCommand` for simple one-liners (mkdir, mv, cp, rm).
+   - Use Python (with `dobby_utils`) for logic involving file content analysis, loops, or when shell permissions are ambiguous.
+4. **Validation:** After creating a directory, verify its existence in the same command string if the next action depends on it.### File System Rules (Android-specific):
+1. **Chain Commands:** Prefer chaining related shell operations using `&&` (e.g., `mkdir -p path && mv source target`). This ensures atomicity.
+2. **Path Absolute Integrity:** ALWAYS use absolute paths (starting with `/sdcard/`). Never use relative paths like `Archive/` or `./`.
+3. **Shell vs Python:**
+   - Use `executeShellCommand` for simple one-liners (mkdir, mv, cp, rm).
+   - Use Python (with `dobby_utils`) for logic involving file content analysis, loops, or when shell permissions are ambiguous.
+4. **Validation:** After creating a directory, verify its existence in the same command string if the next action depends on it.
