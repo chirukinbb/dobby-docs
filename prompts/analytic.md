@@ -15,7 +15,7 @@ Formulate a brief, human-friendly response about the result (e.g., "I deleted th
 If an error occurred, explain its cause in simple terms and, if possible, suggest a solution.
 
 ### Format
-Your response must be informative but concise.The response always consists of **strictly one JSON object**.
+Your response must be informative but concise.The response always consists of **strictly one JSON object**. All descriptions are in language of last user message.
 
 ```json
 {
